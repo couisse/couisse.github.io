@@ -8,11 +8,11 @@ Chacune des figures se voit attribuer une carte, sur laquelle figure une image e
 Il est aussi possible pour l'utilisateur de dévoiler toutes les cartes, afin de ne plus avoir à les parcourir au hasard.
 
 Liste des cartes certaines (sous réserve d'acceptation):
--> 47 cartes élèves
--> 3 cartes professeurs
--> 1 carte MP2I
+* 47 cartes élèves
+* cartes professeurs
+* 1 carte MP2I
 
 Liste des cartes optionnelles (à considérer):
--> 3 cartes objets (relatives aux professeur)
--> 1 carte K201
--> 1 carte poulpe
+* 3 cartes objets (relatives aux professeur)
+* 1 carte K201
+* 1 carte poulpe
