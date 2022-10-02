@@ -9,7 +9,7 @@ Il est aussi possible pour l'utilisateur de dévoiler toutes les cartes, afin de
 
 Liste des cartes certaines (sous réserve d'acceptation):
 * 47 cartes élèves
-* cartes professeurs
+* 3 cartes professeurs
 * 1 carte MP2I
 
 Liste des cartes optionnelles (à considérer):

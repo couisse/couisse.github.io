@@ -94,7 +94,6 @@ function animateCard(cardref, startpos, endpos, duration, flipDirection){
 //cardArray should be empty
 function deploy(cardArray, anchorsArray, playgroundref, origin, deckpos, number, jsonbase){
     let chosens = extractcards(jsonbase, number);
-    let desc = "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire";
     for (let i=0; i<number; i++){
         //creating the card
         cardArray[i] = cardCreate(chosens[i]);
@@ -112,10 +111,8 @@ function deploy(cardArray, anchorsArray, playgroundref, origin, deckpos, number,
 
 //destroying and launching recalling animation for cards
 function recall(cardArray, origin, deckpos){
-    console.log("recall is called");
     let n = cardArray.length;
     for (let i=n-1; i>=0; i--){
-        console.log(i);
         let ipos = getOffset(cardArray[i]);
         ipos = {left: ipos.left - origin.left, top: ipos.top - origin.top};
         //animate
@@ -127,10 +124,40 @@ function recall(cardArray, origin, deckpos){
 
 //reinitialize playground and throw a new draw of cards
 //cardArray should be full of cards
-function redraw(cardArray, anchorsArray, playgroundref, origin, deckpos, number, deckref, fctEvent, jsonbase){
+function redraw(cardArray, anchorsArray, playgroundref, origin, deckpos, number, deckref, fctEvent, jsonbase, buttonref, fctEventReveal){
+    buttonref.removeEventListener("click", fctEventReveal); //avoiding interference
+    //making the animation
     recall(cardArray, origin, deckpos);
     setTimeout(() => {deploy(cardArray, anchorsArray, playgroundref, origin, deckpos, number, jsonbase);}, (number+1)*500);
+    //resetting eventlisteners
     setTimeout(() => {deckref.addEventListener("click", fctEvent, {once: true});}, (2*number+1)*500); //defined as once for spam protection
+    setTimeout(() => {buttonref.addEventListener("click", fctEventReveal, {once: true});}, (2*number+1)*500);
+}
+
+//draw all cards and reveals all of them
+function reveal(cardArray, anchorsArray, deckpos, deckref, fctEventDraw, playgroundref, buttonRef, jsonbase, origin){
+    //kill listeners
+    deckref.removeEventListener("click", fctEventDraw);
+    buttonRef.remove() //don't need the button anymore
+
+    //first, making a recall
+    recall(cardArray, origin, deckpos);
+
+    const n = jsonbase.number;
+    const currentNumber = anchorsArray.length;
+
+    //putting enough anchors for everyone
+    for (let i=0; i<n-currentNumber-1; i++){
+        console.log("creating element", n, currentNumber, i)
+        anchorsArray.push( document.createElement("div") );
+        anchorsArray[i+currentNumber].setAttribute("class", "anchor");
+        playgroundref.appendChild(anchorsArray[i+currentNumber]);
+    }
+
+    //cheating a bit to make the last card be in the deck position (mutating it in the last anchor)
+    setTimeout( () => {deckref.setAttribute("class", "anchor"); anchorsArray.push(deckref);}, (currentNumber+1)*500-10);
+    //sending all of them
+    setTimeout(() => {deploy(cardArray, anchorsArray, playgroundref, origin, deckpos, n, jsonbase);}, (currentNumber+1)*500);
 }
 
 /** Main Code *********************************************************************************************************** */
@@ -139,6 +166,7 @@ function mainFinish(jsonoutput){
     //getting targets
     const playground = document.querySelector(".card_container");
     const deck = document.querySelector(".deck");
+    const button = document.querySelector(".reaveal");
 
     //constants
     const cardnumber = 3;
@@ -160,10 +188,13 @@ function mainFinish(jsonoutput){
     let cardArray = [];
     deploy(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, jsonoutput);
 
-    //the listener for redrawing
-    let fctEvent;
-    fctEvent = () => {redraw(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, deck, fctEvent, jsonoutput);};
-    deck.addEventListener("click", fctEvent, {once: true}); //defined as once for spam protection
+    //the listener for redrawing and revealing
+    let fctEventDraw;
+    let fctEventReveal;
+    fctEventDraw = () => {redraw(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, deck, fctEventDraw, jsonoutput, button, fctEventReveal);};
+    fctEventReveal = () => {reveal(cardArray, anchorsArray, relativedeckpos, deck, fctEventDraw, playground, button, jsonoutput, playgroundpos);};
+    deck.addEventListener("click", fctEventDraw, {once: true}); //defined as once for spam protection
+    button.addEventListener("click", fctEventReveal, {once: true});
 }
 
 ///extracting JSON
