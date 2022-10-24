@@ -162,46 +162,35 @@ function reveal(cardArray, anchorsArray, deckpos, deckref, fctEventDraw, playgro
 
 /** Main Code *********************************************************************************************************** */
 
-function mainFinish(jsonoutput){
-    //getting targets
-    const playground = document.querySelector(".card_container");
-    const deck = document.querySelector(".deck");
-    const button = document.querySelector(".reaveal");
+//getting targets
+const playground = document.querySelector(".card_container");
+const deck = document.querySelector(".deck");
+const button = document.querySelector(".reaveal");
 
-    //constants
-    const cardnumber = 3;
+//constants
+const cardnumber = 3;
 
-    //creating anchors
-    let anchorsArray = [];
-    for (let i=0; i<cardnumber; i++){
-        anchorsArray.push( document.createElement("div") );
-        anchorsArray[i].setAttribute("class", "anchor");
-        playground.appendChild(anchorsArray[i]);
-    }
-
-    //getting the final position of the playground and deck
-    const playgroundpos = getOffset(playground);
-    let relativedeckpos = getOffset(deck);
-    relativedeckpos = {left: relativedeckpos.left - playgroundpos.left, top: relativedeckpos.top - playgroundpos.top};
-
-    //creating cards and initial launch
-    let cardArray = [];
-    deploy(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, jsonoutput);
-
-    //the listener for redrawing and revealing
-    let fctEventDraw;
-    let fctEventReveal;
-    fctEventDraw = () => {redraw(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, deck, fctEventDraw, jsonoutput, button, fctEventReveal);};
-    fctEventReveal = () => {reveal(cardArray, anchorsArray, relativedeckpos, deck, fctEventDraw, playground, button, jsonoutput, playgroundpos);};
-    deck.addEventListener("click", fctEventDraw, {once: true}); //defined as once for spam protection
-    button.addEventListener("click", fctEventReveal, {once: true});
+//creating anchors
+let anchorsArray = [];
+for (let i=0; i<cardnumber; i++){
+    anchorsArray.push( document.createElement("div") );
+    anchorsArray[i].setAttribute("class", "anchor");
+    playground.appendChild(anchorsArray[i]);
 }
 
-///extracting JSON
-const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function() {
-    mainFinish(JSON.parse(this.responseText));
-}
-xmlhttp.open("get", "cardsbase.json");
-//sending the request
-xmlhttp.send();
+//getting the final position of the playground and deck
+const playgroundpos = getOffset(playground);
+let relativedeckpos = getOffset(deck);
+relativedeckpos = {left: relativedeckpos.left - playgroundpos.left, top: relativedeckpos.top - playgroundpos.top};
+
+//creating cards and initial launch
+let cardArray = [];
+deploy(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, cardbase);
+
+//the listener for redrawing and revealing
+let fctEventDraw;
+let fctEventReveal;
+fctEventDraw = () => {redraw(cardArray, anchorsArray, playground, playgroundpos, relativedeckpos, cardnumber, deck, fctEventDraw, cardbase, button, fctEventReveal);};
+fctEventReveal = () => {reveal(cardArray, anchorsArray, relativedeckpos, deck, fctEventDraw, playground, button, cardbase, playgroundpos);};
+deck.addEventListener("click", fctEventDraw, {once: true}); //defined as once for spam protection
+button.addEventListener("click", fctEventReveal, {once: true});
