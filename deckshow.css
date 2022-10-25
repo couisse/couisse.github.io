@@ -12,6 +12,12 @@ body
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.reaveal
+{
+    width: 200px;
+    margin: 30;
+}
+
 /*** Card wrappers *********************************************/
 
 .card_container{
@@ -34,7 +40,7 @@ body
     border-width: 10px;
     border-style: solid;
     border-color: rgb(0, 0, 0);
-    background-image: url("picts/back.png");
+    background-image: url("picts/back.jpg");
     background-repeat: no-repeat;
     background-size: var(--cardw) var(--cardh);
     background-color: blue;
@@ -68,7 +74,7 @@ body
     height: var(--cardh);
     position: absolute;
     /* styling */
-    background-image: url("picts/back.png");
+    background-image: url("picts/back.jpg");
     background-repeat: no-repeat;
     background-size: var(--cardw) var(--cardh);
     border-radius: 15px;
@@ -163,7 +169,7 @@ body
     background-color: rgb(17, 17, 17);
 }
 
-/**special blue**/
+/**blue**/
 
 .card.blue {
     color: black;
@@ -233,6 +239,24 @@ body
 }
 
 .card.pink > .separator 
+{
+    background-color: rgb(17, 17, 17);
+}
+
+/**red**/
+.card.red {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom right, rgb(255, 1, 1), #ff233c);
+    border-color: rgb(0, 0, 0);
+
+}
+
+.card.red > .card_avatar
+{
+    border-color: #000000;
+}
+
+.card.red > .separator 
 {
     background-color: rgb(17, 17, 17);
 }

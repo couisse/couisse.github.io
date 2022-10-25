@@ -30,7 +30,9 @@ function cardCreate(cardDescriptor){
 
     const card_img= document.createElement("img");
     card_img.setAttribute("class", "card_avatar");
-    card_img.setAttribute("src", "picts/"+cardDescriptor.img);
+    console.log(cardDescriptor);
+    console.log(cardDescriptor.id);
+    card_img.setAttribute("src", "picts/"+cardDescriptor.id+".jpg");
     card.appendChild(card_img);
 
     const card_separator2= document.createElement("div");
@@ -63,7 +65,7 @@ function extractcards(jsonbase, number){
         }while (taken.includes(rand));
         taken.push(rand);
         chosenOne = jsonbase.cardlist[rand];
-        cards.push({"title": chosenOne.title, "img": chosenOne.image, "color": chosenOne.color, "desc": chosenOne.desc});
+        cards.push({"title": chosenOne.title, "id": chosenOne.id, "color": chosenOne.color, "desc": chosenOne.desc});
     }
     return cards;
 }

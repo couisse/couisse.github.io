@@ -1,41 +1,35 @@
 const cardbase = JSON.parse(
-    `{"number": 6, 
+    `{"number": 5, 
         "cardlist": [ 
             { 
                 "title": "La Très Sainte Craie", 
-                "image": "craie.jpg",
+                "id": "craie",
                 "color": "grey", 
                 "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire" \
-            }, \
-            {\
+            }, 
+            {
                 "title": "Corentin Ouisse",
-                "image": "avatar.jpg",
+                "id": "corentin",
                 "color": "magenta",
                 "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
             },
             {
                 "title": "Pierre Gueguen",
-                "image": "pierre.png",
+                "id": "pierre",
                 "color": "blue",
                 "desc": "Vous savez moi je ne crois pas qu'il y ai de bonne ou de mauvaise situation, sauf le premier DS"
             },
             {
-                "title": "La Très Sainte Craie",
-                "image": "craie.jpg",
-                "color": "gold",
-                "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire"
-            },
-            {
-                "title": "Corentin Ouisse",
-                "image": "avatar.jpg",
-                "color": "pink",
-                "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
-            },
-            {
-                "title": "Pierre Gueguen",
-                "image": "pierre.png",
+                "title": "Maxence Saïndou",
+                "id": "maxence",
                 "color": "green",
-                "desc": "Vous savez moi je ne crois pas qu'il y ai de bonne ou de mauvaise situation, sauf le premier DS"
+                "desc": "Rien ne se perd, rien ne se crée, tout se pécho"
+            },
+            {
+                "title": "Alex Bouret",
+                "id": "alex",
+                "color": "red",
+                "desc": "Sur un malentendu ça peut passer"
             }
         ]
     }`
