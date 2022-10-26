@@ -1,5 +1,5 @@
 const cardbase = JSON.parse(
-    `{"number": 5, 
+    `{"number": 6, 
         "cardlist": [ 
             { 
                 "title": "La Très Sainte Craie", 
@@ -30,6 +30,12 @@ const cardbase = JSON.parse(
                 "id": "alex",
                 "color": "red",
                 "desc": "Sur un malentendu ça peut passer"
+            },
+            {
+                "title": "Rova Randrianarison",
+                "id": "raminia",
+                "color": "blue",
+                "desc": "Rien de grand dans le monde ne s'est accompli sans passion -Hegel"
             }
         ]
     }`
