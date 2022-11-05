@@ -37,6 +37,12 @@ const cardbase = JSON.parse(
                 "color": "blue",
                 "desc": "Rien de grand dans le monde ne s'est accompli sans passion</br>-Hegel"
             },
+            {
+                "title": "Thibault Alexandre",
+                "id": "alexandre",
+                "color": "blue",
+                "desc": "Bien dormir et bien manger sont les clés pour réussir en prepa"
+            },
             { 
                 "title": "Alpha", 
                 "id": "alpha",
@@ -48,12 +54,6 @@ const cardbase = JSON.parse(
                 "id": "beta",
                 "color": "magenta",
                 "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
-            },
-            {
-                "title": "Delta",
-                "id": "delta",
-                "color": "blue",
-                "desc": "Vous savez moi je ne crois pas qu'il y ai de bonne ou de mauvaise situation, sauf le premier DS"
             },
             { 
                 "title": "Qsd", 
