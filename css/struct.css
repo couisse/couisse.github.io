@@ -1,0 +1,60 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: radial-gradient(circle, #333 0%, #222 100%);
+    background-attachment: fixed;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+*{
+    user-select: none;
+}
+
+#playground-screen{
+    cursor: grab;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#playground{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+}
+
+.change-screen{
+    position: fixed;
+    background-color: #999;
+    border: none;
+    border-radius: 3px;
+    right: 30px;
+    top: 30px;
+    font-family: 'Kantumruy Pro', sans-serif;
+    font-size: 25px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 0px #666, 0px 0px 100px #111;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.change-screen:hover{
+    background-color: #bbb;
+    transition: background-color .3s;
+}
+
+.screen.hidden-screen{
+    opacity: 0;
+    transition: opacity .1s .0s;
+    pointer-events: none;
+}
+
+.screen{
+    opacity: 100;
+    transition: opacity .1s .1s;
+}

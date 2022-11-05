@@ -1,0 +1,117 @@
+.card{
+    height: 600px;
+    aspect-ratio: 2/3;
+    box-shadow: 0px 0px 10px #00000050;
+    border-radius: 6%/4%;
+    float: left;
+    transform-style: preserve-3d;
+}
+
+.card-scaler{
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 2/3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+}
+
+.card-front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6%/4%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back{
+    z-index: -1;
+    transform: rotate3d(0,1,0,180deg);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 6%/4%;
+    backface-visibility: hidden;
+}
+
+.card-back-logo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/back-hd.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    border-radius: 6%/4%;
+    mix-blend-mode: luminosity;
+    filter: drop-shadow(0px 0px 10px #00000030);
+}
+
+.card-front.blue, .card-back.blue{
+    background-color: #62b6ff;
+}
+.card-front.grey, .card-back.grey{
+    background-color: #777777;
+}
+.card-front.magenta, .card-back.magenta{
+    background-color: #ea62ff;
+}
+.card-front.green, .card-back.green{
+    background-color: #5bcf59;
+}
+.card-front.red, .card-back.red{
+    background-color: #fb5757;
+}
+
+/* 766572697465 */
+
+.card-title{
+    font-size: 30px;
+    font-family: 'Kantumruy Pro', sans-serif;
+    font-weight: 700;
+    margin: 10% 0% 10%;
+    text-align: center;
+    color: #fff;
+}
+
+.card-picture-frame{
+    position: relative;
+    width: 70%;
+    aspect-ratio: 1/1;
+}
+
+.card-picture{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 3% 3% 0% 0%;
+}
+
+.card-picture-shadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0px 0px 10px #00000050;
+    border-radius: 3% 3% 0% 0%;
+}
+
+.card-picture-holder{
+    background-color: #00000010;
+    width: 75%;
+    height: 2%;
+    border-radius: .66%/25%;
+}
+
+.card-desc{
+    margin: 14% 10%;
+    font-size: 20px;
+    font-family: 'Kantumruy Pro', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}

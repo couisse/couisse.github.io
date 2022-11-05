@@ -1,0 +1,109 @@
+#footprint{
+    position: fixed;
+    height: 80%;
+    aspect-ratio: 2/3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 6%/4%;
+    box-shadow: 0px 0px 40px #fff0;
+    cursor: pointer;
+    transition: box-shadow .5s;
+}
+
+#footprint:hover{
+    box-shadow: 0px 0px 40px #fff1;
+    transition: box-shadow .5s;
+}
+
+#footprint.blue:hover, #footprint.blue{
+    box-shadow: 0px 0px 40px #62b6ff99;
+    transition: box-shadow .1s 1s;
+}
+#footprint.grey:hover, #footprint.grey{
+    box-shadow: 0px 0px 40px #77777799;
+    transition: box-shadow .1s 1s;
+}
+#footprint.magenta:hover, #footprint.magenta{
+    box-shadow: 0px 0px 40px #ea62ff99;
+    transition: box-shadow .1s 1s;
+}
+#footprint.green:hover, #footprint.green{
+    box-shadow: 0px 0px 40px #5bcf5999;
+    transition: box-shadow .1s 1s;
+}
+#footprint.red:hover, #footprint.red{
+    box-shadow: 0px 0px 40px #fb575799;
+    transition: box-shadow .1s 1s;
+}
+
+#footprint-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/back-hd.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    border-radius: 6%/4%;
+    box-shadow: inset 0px 0px 40px #555;
+    filter: grayscale(1) brightness(0.2);
+}
+
+#footprint-text{
+    position: absolute;
+    font-family: 'Kantumruy Pro';
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: #111;
+    width: 100%;
+    bottom: 8%;
+}
+
+.card.discover-card{
+    position: fixed;
+    transform-style: preserve-3d;
+    left: calc(50% - 200px);
+    top: calc(50% - 300px);
+    animation-name: discover;
+    animation-duration: 1s;
+    opacity: 100;
+    transition: opacity .1s;
+}
+
+.card.discover-card .card-front{
+    cursor: pointer;
+}
+
+.card.discover-card.hidden{
+    opacity: 0;
+    transition: opacity .1s;
+    pointer-events: none;
+}
+
+@keyframes discover {
+    0%{
+        transform: perspective(1000px) translate3d(0%, -200%, 200px) rotate3d(0,0,0,0deg);/*load-image beacause visible*/
+        animation-timing-function: linear;
+    }
+    1%   {
+        transform: perspective(1000px) translate3d(0%, -200%, 200px) rotate3d(.1,1,-1,180deg);
+        animation-timing-function: ease-in;
+    }
+    25%  {
+        transform: perspective(1000px) translate3d(0%, -100%, 150px) rotate3d(.05,1,-.2,180deg);
+        animation-timing-function: ease-out;
+    }
+    50%  {
+        transform: perspective(1000px) translate3d(0%, 0%, 100px) rotate3d(0,1,0,180deg);
+        animation-timing-function: ease-in;
+    }
+    90% {
+        transform: perspective(1000px) translate3d(0%, 0%, 50px) rotate3d(.1,1,0,70deg);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: perspective(1000px) translate3d(0%, 0%, 0px) rotate3d(0,1,0,0deg);
+    }
+}
