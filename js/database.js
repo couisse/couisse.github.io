@@ -1,12 +1,6 @@
 const cardbase = JSON.parse(
     `{"number": 15, 
         "cardlist": [ 
-            { 
-                "title": "La Très Sainte Craie", 
-                "id": "craie",
-                "color": "grey", 
-                "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire"
-            }, 
             {
                 "title": "Corentin Ouisse",
                 "id": "corentin",
@@ -38,28 +32,34 @@ const cardbase = JSON.parse(
                 "desc": "Rien de grand dans le monde ne s'est accompli sans passion</br>-Hegel"
             },
             {
-                "title": "Thibault Alexandre",
+                "title": "Alexandre Thibault",
                 "id": "alexandre",
                 "color": "blue",
                 "desc": "Bien dormir et bien manger sont les clés pour réussir en prepa"
             },
             { 
-                "title": "Alpha", 
-                "id": "alpha",
+                "title": "Carla Mpon", 
+                "id": "carla",
+                "color": "green", 
+                "desc": "Tout se paie dans la vie, il n'y a que la mort qui est gratuite et encore, elle vous coute la vie."
+            }, 
+            {
+                "title": "Salif Véret",
+                "id": "salif",
+                "color": "blue",
+                "desc": "Quand l'appétit va, tout va - Obélix"
+            },
+            { 
+                "title": "La Très Sainte Craie", 
+                "id": "craie",
                 "color": "grey", 
                 "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire"
             }, 
-            {
-                "title": "Beta",
-                "id": "beta",
-                "color": "magenta",
-                "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
-            },
             { 
-                "title": "Qsd", 
-                "id": "qsd",
+                "title": "La Flûte", 
+                "id": "flute",
                 "color": "grey", 
-                "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire"
+                "desc": "De magnifiques concerts furent donnés grâce à cet instrument de légende"
             }, 
             {
                 "title": "Qs",
