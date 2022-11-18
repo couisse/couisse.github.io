@@ -48,6 +48,24 @@ const cardbase = JSON.parse(
                 "id": "salif",
                 "color": "blue",
                 "desc": "Quand l'appétit va, tout va - Obélix"
+            }, 
+            {
+                "title": "Maïna Quiroz--Peyret",
+                "id": "maina",
+                "color": "blue",
+                "desc": "Petit animal stupide"
+            },
+            {
+                "title": "Amaury Loye",
+                "id": "amaury",
+                "color": "blue",
+                "desc": "Toute 3-variété, compacte, sans bord, et simplement connexe, est homéomorphe à la 3-sphère."
+            },
+            { 
+                "title": "Eliott Piccand", 
+                "id": "eliott",
+                "color": "magenta", 
+                "desc": "); DROP TABLE Cards;"
             },
             { 
                 "title": "La Très Sainte Craie", 
@@ -60,24 +78,6 @@ const cardbase = JSON.parse(
                 "id": "flute",
                 "color": "grey", 
                 "desc": "De magnifiques concerts furent donnés grâce à cet instrument de légende"
-            }, 
-            {
-                "title": "Qs",
-                "id": "qs",
-                "color": "magenta",
-                "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
-            },
-            {
-                "title": "Ddd",
-                "id": "ddd",
-                "color": "blue",
-                "desc": "Vous savez moi je ne crois pas qu'il y ai de bonne ou de mauvaise situation, sauf le premier DS"
-            },
-            { 
-                "title": "Oui", 
-                "id": "oui",
-                "color": "grey", 
-                "desc": "On raconte que les solutions de tous les exos de maths se cachent en cet artéfact millénaire"
             }, 
             {
                 "title": "Non",
