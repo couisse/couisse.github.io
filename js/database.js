@@ -67,6 +67,12 @@ const cardbase = JSON.parse(
                 "color": "magenta", 
                 "desc": "); DROP TABLE Cards;"
             },
+            {
+                "title": "Gabin Landreau",
+                "id": "gabin",
+                "color": "green",
+                "desc": "100 % pur beurre (salé ?!)"
+            },
             { 
                 "title": "La Très Sainte Craie", 
                 "id": "craie",
@@ -79,12 +85,6 @@ const cardbase = JSON.parse(
                 "color": "grey", 
                 "desc": "De magnifiques concerts furent donnés grâce à cet instrument de légende"
             }, 
-            {
-                "title": "Non",
-                "id": "non",
-                "color": "magenta",
-                "desc": "J'ai été un chat dans une vie antérieure. J'ai donc le devoir moral d'être insupportable"
-            },
             {
                 "title": "Surement",
                 "id": "surement",
