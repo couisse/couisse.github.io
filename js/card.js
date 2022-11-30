@@ -7,8 +7,6 @@ class Card{
         this.desc = card.desc;
     }
 
-    //7520636861742076 
-
     BuildHtml(isDiscover){
         //general
         let card = $('<div class="card" id="' + this.id + '"></div>');

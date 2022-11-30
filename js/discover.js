@@ -13,8 +13,6 @@ $(document).ready(function() {
     });
 });
 
-//4c276f65696c2064
-
 $("#card-holder").on("click", function(){
     $("#card-holder .card").addClass("hidden");
     $("#footprint").removeClass(card.color);

@@ -1,5 +1,5 @@
 const cardbase = JSON.parse(
-    `{"number": 15, 
+    `{"number": 16, 
         "cardlist": [ 
             {
                 "title": "Corentin Ouisse",
@@ -72,6 +72,18 @@ const cardbase = JSON.parse(
                 "id": "gabin",
                 "color": "green",
                 "desc": "100 % pur beurre (salé ?!)"
+            }, 
+            {
+                "title": "Yann Lemerle",
+                "id": "yann",
+                "color": "blue",
+                "desc": "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions."
+            }, 
+            {
+                "title": "Lilian Vault",
+                "id": "lilian",
+                "color": "red",
+                "desc": "Lorem ipsum dolor sit amet"
             },
             { 
                 "title": "La Très Sainte Craie", 
@@ -84,12 +96,6 @@ const cardbase = JSON.parse(
                 "id": "flute",
                 "color": "grey", 
                 "desc": "De magnifiques concerts furent donnés grâce à cet instrument de légende"
-            }, 
-            {
-                "title": "Surement",
-                "id": "surement",
-                "color": "blue",
-                "desc": "Vous savez moi je ne crois pas qu'il y ai de bonne ou de mauvaise situation, sauf le premier DS"
             }
         ]
     }`

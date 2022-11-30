@@ -41,8 +41,6 @@ $(document).ready(function() {
         });
     });
 
-    //6f757273206c6120 
-
     //make the playground zoomable
     $("#playground-screen").on('wheel', function(e){
         if(e.originalEvent.deltaY != 0){
