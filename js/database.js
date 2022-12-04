@@ -1,5 +1,5 @@
 const cardbase = JSON.parse(
-    `{"number": 16, 
+    `{"number": 18, 
         "cardlist": [ 
             {
                 "title": "Corentin Ouisse",
@@ -84,6 +84,18 @@ const cardbase = JSON.parse(
                 "id": "lilian",
                 "color": "red",
                 "desc": "Lorem ipsum dolor sit amet"
+            },
+            {
+                "title": "Aurelio Oliviero",
+                "id": "aurelio",
+                "color": "red",
+                "desc": "L'inhomogénéité est la chose au monde la mieux partagée"
+            },
+            {
+                "title": "Simon (la Chaise)",
+                "id": "simon_chaise",
+                "color": "magenta",
+                "desc": "La vie, c'est comme une pastèque, y'a pas mal de pépins, mais c'est bon quand même !"
             },
             { 
                 "title": "La Très Sainte Craie", 
