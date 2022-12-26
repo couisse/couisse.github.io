@@ -6,9 +6,16 @@ body{
     position: fixed;
     height: 100%;
     width: 100%;
+	overscroll-behavior: contain;
 }
 
 *{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
@@ -57,4 +64,22 @@ body{
 .screen{
     opacity: 100;
     transition: opacity .1s .1s;
+}
+
+#goto-discover-screen{
+	width: 280px;
+}
+
+#goto-playground-screen{
+	width: 250px;
+}
+
+@media only screen and (max-width: 800px) {
+	.change-screen{
+		top: auto;
+		right: auto;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }

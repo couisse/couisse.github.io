@@ -41,6 +41,37 @@ $(document).ready(function() {
         });
     });
 
+	$("#playground-screen").on('touchstart', function(e){
+		if(e.touches.length > 1){
+			return;
+		}
+		//save drag start
+        height = playground.outerHeight();
+        width = playground.outerWidth();
+        ypos = playground.offset().top + height - e.touches[0].screenY,
+        xpos = playground.offset().left + width - e.touches[0].screenX;
+		var olditop = 100000000;
+		var oldileft = 100000000;
+
+        //drag
+        $(document.body).on('touchmove', function(e){
+			var itop = e.touches[0].screenY + ypos - height;
+			var ileft = e.touches[0].screenX + xpos - width;
+			if(Math.abs(olditop - itop) > 1 || Math.abs(oldileft - ileft) > 1){
+				playground.offset({top: itop,left: ileft});
+				olditop = itop;
+				oldileft = ileft;
+			}
+        })
+
+        //end drag
+        .on('touchend', function(e){
+			if(e.touches.length == 0){
+				$(document.body).off('touchmove');	
+			}
+        });
+	});
+
     //make the playground zoomable
     $("#playground-screen").on('wheel', function(e){
         if(e.originalEvent.deltaY != 0){

@@ -13,7 +13,13 @@ class Card{
         $(card).append('<div class="card-scaler"></div')
         let scaler = $(card).find(".card-scaler");
         if(isDiscover){
-            $(scaler).css("height", (100*0.8*$(window).height()/600) + '%');
+			var phone = window.matchMedia("(max-width: 800px)")
+			if(phone.matches){
+				$(scaler).css("height", (100*0.75*$(window).height()/600) + '%');
+			}
+            else{
+				$(scaler).css("height", (100*0.8*$(window).height()/600) + '%');
+			}
             $(card).addClass("discover-card");
         }
         
