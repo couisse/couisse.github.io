@@ -1,5 +1,5 @@
 const cardbase = JSON.parse(
-    `{"number": 19, 
+    `{"number": 20, 
         "cardlist": [ 
             {
                 "title": "Corentin Ouisse",
@@ -96,6 +96,12 @@ const cardbase = JSON.parse(
                 "id": "simon_chaise",
                 "color": "magenta",
                 "desc": "La vie, c'est comme une pastèque, y'a pas mal de pépins, mais c'est bon quand même !"
+            },
+            {
+                "title": "Anne-Lise Adnot",
+                "id": "annelise",
+                "color": "orange",
+                "desc": "Mais... !"
             },
             {
                 "title": "Raphaëlle Calvez",
